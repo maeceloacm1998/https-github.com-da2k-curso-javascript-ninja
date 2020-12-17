@@ -106,7 +106,7 @@ return ' só cabe mais '+ carro.vagasCar+' pessoa.1';
 else {
 carro.quantidadePessoas += pessoas;
 return ' Já temos '+carro.quantidadePessoas +' pessoas no carro ';
-pessoas = 0;
+carro.vagasCar = 5 - carro.quantidadePessoas;
 }
 }
 
