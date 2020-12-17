@@ -30,13 +30,14 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `quantidadePessoas` - Number - zero por padrão
 */
 var carro = {
-marca: Pegeout;
-modelo: Xtreme;
-placa: 123qwe;
-ano: 2020;
-quantasPortas:4;
-assentos: 5;
-quantidadePessoas: 0;
+marca: Pegeout,
+modelo: Xtreme,
+placa: 123qwe,
+ano: 2020,
+quantasPortas:4,
+assentos: 5,
+quantidadePessoas: 0
+}
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
@@ -91,19 +92,22 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-function addPessoasCar (x) {
-quantidadePessoas = x;
-return 'Já temos '+ quantidadePessoas + ' pessoas no carro.';
-if (quantidadePessoas > 5){
-return 'O carro já está lotado. '; 
+carro.addPessoasCar = function( pessoas ) {
+carro.vagasCar = 5 - carro.quantidadePessoas;
+if(carro.vagasCar == 0){
+return ' O carro está lotado .';
 }
-if (quantidadePessoas <= 5 && (quantidadePessoas + x) <= 5){
-  if (5 - quantidadePessoas == 1){ 
-  return 'Só cabem mais'+ (5 - quantidadePessoas) + ' pessoa!;
-  }
-  else{
-  return 'Só cabem mais'+ (5 - quantidadePessoas) + ' pessos!;
-  }  
+else if(pessoas > carro.vagasCar){
+return ' só cabem mais '+ carro.vagasCar+' pessoas.2';
+}
+else if(pessoas > carro.vagasCar && carro.vagasCar == 1){
+return ' só cabe mais '+ carro.vagasCar+' pessoa.1';
+}
+else {
+carro.quantidadePessoas += pessoas;
+return ' Já temos '+carro.quantidadePessoas +' pessoas no carro ';
+pessoas = 0;
+}
 }
 
 /*
